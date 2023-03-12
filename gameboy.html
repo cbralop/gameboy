@@ -1,0 +1,331 @@
+<html>
+    <head>
+        <style>
+            .gameboy {
+                width: 200px;
+                height: 320px;
+                border: 1px solid black;
+                border-radius: 10px;
+                border-bottom-right-radius: 25px;
+                background: lightgray;
+                position: relative;
+            }
+
+            .screen_black {
+                width: 160px;
+                height: 125px;
+                background: gray;
+                position: absolute;
+                border-bottom-right-radius: 25px;
+                top: 15px;
+                left: 20px;
+            }
+            
+            .left-div-line{
+                width: 100%;
+                left: 0px;
+                top: 0px;
+                position: absolute;
+            }
+
+            .left-line {
+                margin-left: 3px;
+                border-top: 1px solid red;
+                border-bottom: 1px solid blue;
+                border-left: 0px;
+                border-right: 0px;
+                height: 5px;
+                width: 35px;
+            }
+
+            .right-line {
+                margin-right: 4px;
+                border-top: 1px solid red;
+                border-bottom: 1px solid blue;
+                border-left: 0px;
+                border-right: 0px;
+                height: 5px;
+                width: 20px;
+            }
+
+            .up-letters {
+                top: 8px;
+                right: 35px;
+                color: white;
+                font-size: 6px;
+                font-family: Arial, Helvetica, sans-serif;
+                position: absolute;
+            }
+
+            .battery {
+                top: 50px;
+                left: 6px;
+                color: white;
+                font-size: 7px;
+                font-family: Arial, Helvetica, sans-serif;
+                position: absolute;
+            }
+
+            .light {
+                top: 40px;
+                left: 13px;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                border: 1px solid black;
+                background-color: lightgreen;
+                position: absolute;
+            }
+
+            .screen {
+                width: 100px;
+                height: 90px;
+                background: green;
+                position: absolute;
+                top: 20px;
+                left: 30px;
+            }
+
+            .nintendo {
+                top: 132px;
+                left: 0px;
+                color: blue;
+                font-size: 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                position: absolute;
+            }
+            
+            .gameboy-letters {
+                top: 130px;
+                left: 44px;
+                color: blue;
+                font-size: 12px;
+                font-family: Arial, Helvetica, sans-serif;
+                position: absolute;
+            }
+
+            .tm {
+                top: 136px;
+                left: 108px;
+                color: blue;
+                font-size: 7px;
+                font-family: Arial, Helvetica, sans-serif;
+                position: absolute;
+            }
+
+            .dpad {
+                width: 55px;
+                height: 55px;
+                position: absolute;
+                top: 180px;
+                left: 20px;
+            }
+
+            .dpad div {
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 18.5px 12.5px 0 15.5px;
+                border-color: #333 transparent transparent transparent;
+                position: absolute;
+            }
+
+            .up {
+                top: 0;
+                left: 14.5px;
+                width: 100px;
+                height: 100px;
+                background: black;
+                transform: rotate(180deg);
+            }
+
+            .down {
+                bottom: 0;
+                left: 14.5px;
+                width: 100px;
+                height: 100px;
+                background: black;
+            }
+
+            .left {
+                top: 18.5px;
+                left: -5;
+                width: 100px;
+                height: 100px;
+                transform: rotate(90deg);
+                background: black;
+            }
+
+            .right {
+                top: 18.5px;
+                right: -5;
+                width: 100px;
+                height: 100px;
+                transform: rotate(-90deg);
+                background: black;
+            }
+
+            .buttons {
+                width: 50px;
+                height: 60px;
+                position: absolute;
+                top: 180px;
+                right: 25px;
+            }
+
+            .buttons div {
+                width: 20px;
+                height: 20px;
+                border: 1px solid black;
+                border-radius: 50%;
+                position: absolute;
+            }
+
+            .a {
+                top: 5px;
+                right: 5px;
+                background-color: #A73361;
+            }
+
+            .b {
+                bottom: 5px;
+                right: 30px;
+                background-color: #A73361;
+            }
+            
+            .buttons-select {
+                width: 50px;
+                height: 60px;
+                position: absolute;
+                top: 220px;
+                right: 80px;
+            }
+
+            .buttons-select div {
+                width: 20px;
+                height: 10px;
+                border: 1px solid black;
+                border-radius: 40%;
+                position: absolute;
+            }
+
+            .start {
+                bottom: 5px;
+                right: 5px;
+                background-color: #736B6D;
+                transform: rotate(-45deg);
+            }
+
+            .select {
+                bottom: 5px;
+                right: 40px;
+                background-color: #736B6D;
+                transform: rotate(-45deg);
+            }
+
+            .ranuras {
+                width: 200px;
+                height: 50px;
+                position: absolute;
+                top: 255px;
+                right: -4px;
+            }
+
+            .ranuras div {
+                width: 40px;
+                height: 4px;
+                border: 0px solid black;
+                border-radius: 25%;
+                position: absolute;
+            }
+
+            .ranura0 {
+                bottom: 3px;
+                right: 31px;
+                background-color: #736B6D;
+                transform: rotate(45deg);
+                border-bottom: 2px solid #736B6D !important;
+            }
+
+            .ranura1 {
+                bottom: 7px;
+                right: 25px;
+                background-color: #736B6D;
+                transform: rotate(45deg);
+                border-bottom: 2px solid black !important;
+            }
+
+            .ranura2 {
+                bottom: 11px;
+                right: 19px;
+                background-color: #736B6D;
+                transform: rotate(45deg);
+                border-bottom: 2px solid black !important;
+            }
+
+            .ranura3 {
+                bottom: 15px;
+                right: 13px;
+                background-color: #736B6D;
+                transform: rotate(45deg);
+                border-bottom: 2px solid black !important;
+            }
+
+            .ranura4 {
+                bottom: 19px;
+                right: 7px;
+                background-color: #736B6D;
+                transform: rotate(45deg);
+                border-bottom: 2px solid black !important;
+            }
+
+            .ranura5 {
+                bottom: 23px;
+                right: 1px;
+                background-color: #736B6D;
+                transform: rotate(45deg);
+                border-bottom: 2px solid black !important;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="gameboy">
+            <div class="screen_black">
+                <div class="left-div-line"><hr class="left-line"></hr></div>
+                <div class="up-letters">Dot Matrix Whith Stereo Sound</div>
+                <div class="light"></div>
+                <div class="battery">Battery</div>
+                <div class="screen"></div>
+                <div class="nintendo">Nintendo</div>
+                <div class="gameboy-letters">GAME BOY</div>
+                <div class="tm">TM</div>
+            </div>
+            <div class="dpad">
+              <div class="up"></div>
+              <div class="down"></div>
+              <div class="left"></div>
+              <div class="right"></div>
+            </div>
+            <div class="buttons">
+              <div class="a"></div>
+              <div class="b"></div>
+            </div>
+            <div class="buttons-select">
+                <div class="start"></div>
+                <div class="select"></div>
+            </div>
+            <div class="ranuras">
+                <div class="ranura0"></div>
+                <div class="ranura1"></div>
+                <div class="ranura2"></div>
+                <div class="ranura3"></div>
+                <div class="ranura4"></div>
+                <div class="ranura5"></div>
+            </div>
+          </div>
+          
+    </body>
+
+</html>
